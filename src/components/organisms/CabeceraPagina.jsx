@@ -1,18 +1,10 @@
-import { Link } from 'react-router-dom'
+import Migas from '../molecules/Migas'
 
 function CabeceraPagina({ migas, titulo, descripcion }) {
     return (
         <section className="cabecera-pagina">
             <div className="contenedor">
-                <nav className="migas">
-                    <ol>
-                        {migas.map((miga) => (
-                            <li key={miga.texto}>
-                                {miga.to ? <Link to={miga.to}>{miga.texto}</Link> : miga.texto}
-                            </li>
-                        ))}
-                    </ol>
-                </nav>
+                <Migas migas={migas} />
                 <h1>{titulo}</h1>
                 <p>{descripcion}</p>
             </div>

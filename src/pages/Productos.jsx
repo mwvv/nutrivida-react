@@ -18,7 +18,7 @@ function Productos({ productos }) {
     return (
         <main id="contenido">
             <CabeceraPagina
-                migas={[{ texto: 'Inicio', to: '/' }, { texto: 'Productos' }]}
+                migas={[{ label: 'Inicio', to: '/' }, { label: 'Productos' }]}
                 titulo="Catálogo NutriVida"
                 descripcion="Seis alternativas para armar tu rutina: suplementos y snacks que llegan a tu casa, y servicios de nutrición que puedes tomar desde donde estés. Todos los precios están en pesos chilenos e incluyen IVA."
             />
