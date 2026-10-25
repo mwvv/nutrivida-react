@@ -9,6 +9,7 @@ import Index from './pages/Index'
 import Productos from './pages/Productos'
 import Producto from './pages/Producto'
 import { productos as productosIniciales } from './data/productos'
+import Scrollpaginas from './utils/Scrollpaginas'
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
         />
       </Routes>
       <Footer />
+      <Scrollpaginas />
     </>
   )
 }
