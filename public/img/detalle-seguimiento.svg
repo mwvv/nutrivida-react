@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <defs><linearGradient id="fondo" x1="0" y1="0" x2="0.4" y2="1">
+    <stop offset="0" stop-color="#ddf1e6"/><stop offset="1" stop-color="#eff8f3"/></linearGradient></defs>
+  <rect width="800" height="600" fill="url(#fondo)"/>
+  <circle cx="400" cy="300" r="215" fill="#6fc79a" opacity="0.55"/>
+  <circle cx="400" cy="300" r="165" fill="#ffffff" opacity="0.45"/>
+
+  <rect x="196" y="132" width="408" height="336" rx="20" fill="#ffffff" stroke="#bfe6d1" stroke-width="6"/>
+  <rect x="228" y="168" width="150" height="16" rx="8" fill="#bfe6d1"/>
+  <rect x="228" y="196" width="96" height="12" rx="6" fill="#ddf1e6"/>
+  <g stroke="#ddf1e6" stroke-width="3">
+    <line x1="228" y1="264" x2="572" y2="264"/>
+    <line x1="228" y1="322" x2="572" y2="322"/>
+    <line x1="228" y1="380" x2="572" y2="380"/>
+  </g>
+  <line x1="228" y1="240" x2="228" y2="418" stroke="#6fc79a" stroke-width="4" stroke-linecap="round"/>
+  <line x1="228" y1="418" x2="572" y2="418" stroke="#6fc79a" stroke-width="4" stroke-linecap="round"/>
+<rect x="262" y="322" width="46" height="96" rx="10" fill="#2a9160"/><rect x="330" y="280" width="46" height="138" rx="10" fill="#2a9160"/><rect x="398" y="300" width="46" height="118" rx="10" fill="#2a9160"/><rect x="466" y="242" width="46" height="176" rx="10" fill="#2a9160"/>
+  <polyline points="285,300 353,262 421,278 489,224" fill="none" stroke="#c2571a"
+            stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="285" cy="300" r="10" fill="#c2571a"/>
+  <circle cx="353" cy="262" r="10" fill="#c2571a"/>
+  <circle cx="421" cy="278" r="10" fill="#c2571a"/>
+  <circle cx="489" cy="224" r="13" fill="#ffffff" stroke="#c2571a" stroke-width="7"/>
+  <rect x="500" y="352" width="72" height="66" rx="10" fill="#bfe6d1"/>
+  <ellipse cx="400" cy="500" rx="180" ry="16" fill="#16593a" opacity="0.14"/>
+
+</svg>

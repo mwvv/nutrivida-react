@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <defs>
+    <linearGradient id="fondo" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#eff8f3"/>
+      <stop offset="1" stop-color="#ddf1e6"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#fondo)"/>
+  <circle cx="400" cy="300" r="215" fill="#bfe6d1" opacity="0.55"/>
+  <circle cx="400" cy="300" r="165" fill="#ffffff" opacity="0.45"/>
+
+  <ellipse cx="400" cy="470" rx="230" ry="26" fill="#6fc79a" opacity="0.35"/>
+  <g transform="translate(120,150) rotate(-18) scale(0.9)"><path d="M0 0 C 46 -30 96 -22 118 6 C 92 52 40 58 4 34 Z" fill="#6fc79a"/><path d="M4 20 C 40 12 78 8 112 8" stroke="#ffffff" stroke-width="4" fill="none" opacity="0.7"/></g>
+  <g transform="translate(690,430) rotate(160) scale(0.75)"><path d="M0 0 C 46 -30 96 -22 118 6 C 92 52 40 58 4 34 Z" fill="#6fc79a"/><path d="M4 20 C 40 12 78 8 112 8" stroke="#ffffff" stroke-width="4" fill="none" opacity="0.7"/></g>
+  <!-- contenido del bowl -->
+  <g>
+    <circle cx="330" cy="300" r="52" fill="#2a9160"/>
+    <circle cx="430" cy="285" r="44" fill="#c2571a"/>
+    <circle cx="490" cy="330" r="36" fill="#6fc79a"/>
+    <circle cx="368" cy="345" r="34" fill="#f6e7d3"/>
+    <circle cx="272" cy="335" r="28" fill="#c2571a" opacity="0.75"/>
+    <path d="M300 250 C 340 214 396 216 424 246 C 392 288 336 288 300 250 Z" fill="#1f7a4d"/>
+  </g>
+  <!-- bowl -->
+  <path d="M228 330 L 572 330 C 560 424 494 470 400 470 C 306 470 240 424 228 330 Z" fill="#ffffff"/>
+  <path d="M228 330 L 572 330 C 566 372 546 406 518 430 L 282 430 C 254 406 234 372 228 330 Z" fill="#ddf1e6"/>
+  <rect x="214" y="316" width="372" height="26" rx="13" fill="#1f7a4d"/>
+  <ellipse cx="400" cy="486" rx="132" ry="14" fill="#16593a" opacity="0.18"/>
+
+</svg>
