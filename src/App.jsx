@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles/estilos.css'
 import Navbar from './components/organisms/Navbar'
 import { itemsMenu } from './data/itemsMenu'
+import Footer from './components/organisms/Footer'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<h1>NutriVida</h1>} />
       </Routes>
+      <Footer />
     </>
   )
 }
