@@ -1178,3 +1178,136 @@ button.navegacion__enlace {
 .campo .form-select:disabled {
   background-color: var(--blanco);
 }
+/* --- Carrito de compras --- */
+.carrito {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 32px;
+  align-items: start;
+}
+
+.carrito__resumen {
+  margin-block: 0;
+}
+
+.carrito__aviso {
+  margin-bottom: 24px;
+}
+
+.lista-carrito {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.fila-carrito {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 18px;
+  padding: 16px;
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+
+.fila-carrito__imagen {
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+  border-radius: var(--radio-chico);
+  background-color: var(--verde-50);
+}
+
+.fila-carrito__nombre {
+  font-weight: 700;
+  color: var(--verde-900);
+}
+
+.fila-carrito__precio {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  color: var(--gris-texto);
+}
+
+.fila-carrito .selector-cantidad,
+.fila-carrito .aviso-cantidad {
+  margin-bottom: 0;
+}
+
+.fila-carrito__cierre {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  min-width: 96px;
+}
+
+.fila-carrito__subtotal {
+  font-weight: 700;
+  color: var(--verde-800);
+}
+
+.fila-carrito__quitar {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--rojo-error);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.carrito-vacio {
+  max-width: 560px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+/* --- Página 404 --- */
+.no-encontrada {
+  max-width: 640px;
+  text-align: center;
+}
+
+.no-encontrada__codigo {
+  margin: 0 0 0.5rem;
+  font-family: var(--fuente-titulo);
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--verde-700);
+}
+
+@media (max-width: 900px) {
+  .carrito {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .fila-carrito {
+    grid-template-columns: 72px minmax(0, 1fr);
+  }
+
+  .fila-carrito__imagen {
+    width: 72px;
+    height: 72px;
+  }
+
+  .fila-carrito__cantidad,
+  .fila-carrito__cierre {
+    grid-column: 1 / -1;
+  }
+
+  .fila-carrito__cierre {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

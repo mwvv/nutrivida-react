@@ -1,6 +1,6 @@
 import { Link, NavLink } from 'react-router-dom'
 
-function Navbar({ itemsMenu, sesion, onCerrarSesion }) {
+function Navbar({ itemsMenu, sesion, onCerrarSesion, unidadesCarrito }) {
     return (
         <header className="encabezado">
             <div className="contenedor encabezado__barra">
@@ -21,7 +21,7 @@ function Navbar({ itemsMenu, sesion, onCerrarSesion }) {
                                     end={item.to === '/'}
                                     className={`navegacion__enlace ${item.destacado ? 'navegacion__enlace--destacado' : ''}`}
                                 >
-                                    {item.label}
+                                    {item.carrito ? item.label + ' (' + unidadesCarrito + ')' : item.label}
                                 </NavLink>
                             </li>
                         ))}

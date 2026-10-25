@@ -10,8 +10,12 @@ import Productos from './pages/Productos'
 import Producto from './pages/Producto'
 import Login from './pages/Login'
 import Registro from './pages/Registro'
+import Carrito from './pages/Carrito'
+import NoEncontrada from './pages/NoEncontrada'
 import { productos as productosIniciales } from './data/productos'
 import Scrollpaginas from './utils/Scrollpaginas'
+import { normalizarCantidad } from './utils/cantidad'
+import { CANTIDAD_MINIMA, CANTIDAD_MAXIMA, contarUnidades } from './utils/carrito'
 
 
 function App() {
@@ -40,9 +44,29 @@ function App() {
     })
   }
 
+  // Devuelve el mensaje de normalizarCantidad para que la fila del carrito pueda mostrarlo.
+  const cambiarCantidad = (id, cantidad) => {
+    const resultado = normalizarCantidad(cantidad, CANTIDAD_MINIMA, CANTIDAD_MAXIMA)
+    setCarrito((actual) => actual.map((item) => (item.id === id ? { ...item, cantidad: resultado.cantidad } : item)))
+    return resultado.mensaje
+  }
+
+  const quitarDelCarrito = (id) => {
+    setCarrito((actual) => actual.filter((item) => item.id !== id))
+  }
+
+  const vaciarCarrito = () => {
+    setCarrito([])
+  }
+
   return (
     <>
-      <Navbar itemsMenu={sesion ? itemsMenuSesion : itemsMenu} sesion={sesion} onCerrarSesion={cerrarSesion} />
+      <Navbar
+        itemsMenu={sesion ? itemsMenuSesion : itemsMenu}
+        sesion={sesion}
+        onCerrarSesion={cerrarSesion}
+        unidadesCarrito={contarUnidades(carrito)}
+      />
       <Routes>
         <Route path="/" element={<Index productos={productos} />} />
         <Route path="/productos" element={<Productos productos={productos} />} />
@@ -52,6 +76,20 @@ function App() {
         />
         <Route path="/login" element={<Login onLogin={iniciarSesion} />} />
         <Route path="/registro" element={<Registro />} />
+        <Route
+          path="/carrito"
+          element={
+            <Carrito
+              carrito={carrito}
+              productos={productos}
+              sesion={sesion}
+              cambiarCantidad={cambiarCantidad}
+              quitarDelCarrito={quitarDelCarrito}
+              vaciarCarrito={vaciarCarrito}
+            />
+          }
+        />
+        <Route path="*" element={<NoEncontrada />} />
       </Routes>
       <Footer />
       <Scrollpaginas />

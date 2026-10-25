@@ -1,7 +1,7 @@
-function SelectorCantidad({ etiqueta, cantidad, min, max, onEscribir, onPaso }) {
+function SelectorCantidad({ id = 'cantidad', etiqueta, cantidad, min, max, onEscribir, onPaso }) {
     return (
         <div className="selector-cantidad">
-            <label htmlFor="cantidad">{etiqueta}</label>
+            <label htmlFor={id}>{etiqueta}</label>
             <div className="selector-cantidad__control">
                 <button
                     className="selector-cantidad__boton"
@@ -14,7 +14,7 @@ function SelectorCantidad({ etiqueta, cantidad, min, max, onEscribir, onPaso }) 
                 <input
                     className="selector-cantidad__campo"
                     type="number"
-                    id="cantidad"
+                    id={id}
                     name="cantidad"
                     value={cantidad}
                     min={min}
