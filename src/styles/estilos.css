@@ -548,12 +548,12 @@ textarea:focus-visible {
   text-decoration: none;
 }
 
-/* Página actual: se marca con class="activo" en cada HTML */
-.navegacion__enlace.activo,
-.navegacion__enlace.activo {
-  background-color: var(--verde-700);
-  color: var(--blanco);
-}
+  /* Página actual: se marca con class="activo" en cada HTML */
+  .navegacion__enlace.activo,
+  .navegacion__enlace.active {
+    background-color: var(--verde-700);
+    color: var(--blanco);
+  }
 
 .navegacion__enlace--destacado {
   border: 2px solid var(--verde-200);

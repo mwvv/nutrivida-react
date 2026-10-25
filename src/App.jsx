@@ -4,6 +4,7 @@ import './styles/estilos.css'
 import Navbar from './components/organisms/Navbar'
 import { itemsMenu } from './data/itemsMenu'
 import Footer from './components/organisms/Footer'
+import Index from './pages/Index'
 
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
     <>
       <Navbar itemsMenu={itemsMenu} />
       <Routes>
-        <Route path="/" element={<h1>NutriVida</h1>} />
+        <Route path="/" element={<Index />} />
       </Routes>
       <Footer />
     </>
