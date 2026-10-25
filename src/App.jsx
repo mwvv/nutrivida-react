@@ -1,13 +1,17 @@
 import { Routes, Route } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles/estilos.css'
+import Navbar from './components/organisms/Navbar'
+import { itemsMenu } from './data/itemsMenu'
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<h1>NutriVida</h1>} />
-    </Routes>
+    <>
+      <Navbar itemsMenu={itemsMenu} />
+      <Routes>
+        <Route path="/" element={<h1>NutriVida</h1>} />
+      </Routes>
+    </>
   )
 }
 

@@ -549,6 +549,7 @@ textarea:focus-visible {
 }
 
 /* Página actual: se marca con class="activo" en cada HTML */
+.navegacion__enlace.activo,
 .navegacion__enlace.activo {
   background-color: var(--verde-700);
   color: var(--blanco);
