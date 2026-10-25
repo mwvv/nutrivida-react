@@ -1164,3 +1164,8 @@ button.navegacion__enlace {
   border-color: var(--rojo-error);
   background-color: #fdf4f3;
 }
+
+.campo .form-control,
+.campo .form-select {
+  width: auto;
+}
