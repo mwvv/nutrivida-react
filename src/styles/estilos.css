@@ -1,23 +1,30 @@
-
 :root {
-  --verde-900: #0f3d26;   /* Texto sobre fondos claros y superficies oscuras */
+  --verde-900: #0f3d26;
+  /* Texto sobre fondos claros y superficies oscuras */
   --verde-800: #16593a;
-  --verde-700: #1f7a4d;   /* Color primario de marca */
+  --verde-700: #1f7a4d;
+  /* Color primario de marca */
   --verde-600: #2a9160;
   --verde-400: #6fc79a;
   --verde-200: #bfe6d1;
   --verde-100: #ddf1e6;
-  --verde-50:  #eff8f3;   /* Fondos suaves */
+  --verde-50: #eff8f3;
+  /* Fondos suaves */
 
   --blanco: #ffffff;
-  --hueso: #f8faf8;       /* Fondo general de página */
+  --hueso: #f8faf8;
+  /* Fondo general de página */
   --gris-borde: #dde6e0;
-  --gris-texto: #46564e;  /* Texto secundario */
-  --negro-texto: #17241d; /* Texto principal */
+  --gris-texto: #46564e;
+  /* Texto secundario */
+  --negro-texto: #17241d;
+  /* Texto principal */
 
-  --naranjo: #a84a13;     /* Acento etiquetas de servicio y avisos*/
+  --naranjo: #a84a13;
+  /* Acento etiquetas de servicio y avisos*/
 
-  --rojo-error: #b3261e;  /* Mensajes de validación */
+  --rojo-error: #b3261e;
+  /* Mensajes de validación */
   --verde-exito: #1b6b45;
 
   /* Tipografía */
@@ -61,7 +68,10 @@ main {
   flex: 1 0 auto;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--fuente-titulo);
   color: var(--verde-900);
   line-height: 1.25;
@@ -69,9 +79,17 @@ h1, h2, h3, h4 {
   font-weight: 700;
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.35rem; }
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.35rem;
+}
 
 p {
   margin: 0 0 1rem;
@@ -171,7 +189,7 @@ textarea:focus-visible {
   cursor: pointer;
   text-decoration: none;
   transition: background-color var(--transicion), color var(--transicion),
-              border-color var(--transicion), transform var(--transicion);
+    border-color var(--transicion), transform var(--transicion);
 }
 
 .boton:hover {
@@ -385,7 +403,8 @@ textarea:focus-visible {
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--rojo-error);
-  min-height: 1.2em; /* reserva el espacio para que el layout no salte */
+  min-height: 1.2em;
+  /* reserva el espacio para que el layout no salte */
 }
 
 .fila-campos {
@@ -465,7 +484,7 @@ textarea:focus-visible {
   padding: 0;
 }
 
-.migas li + li::before {
+.migas li+li::before {
   content: "›";
   margin-right: 0.5rem;
   color: var(--verde-400);
@@ -548,12 +567,12 @@ textarea:focus-visible {
   text-decoration: none;
 }
 
-  /* Página actual: se marca con class="activo" en cada HTML */
-  .navegacion__enlace.activo,
-  .navegacion__enlace.active {
-    background-color: var(--verde-700);
-    color: var(--blanco);
-  }
+/* Página actual: se marca con class="activo" en cada HTML */
+.navegacion__enlace.activo,
+.navegacion__enlace.active {
+  background-color: var(--verde-700);
+  color: var(--blanco);
+}
 
 .navegacion__enlace--destacado {
   border: 2px solid var(--verde-200);
@@ -1178,6 +1197,7 @@ button.navegacion__enlace {
 .campo .form-select:disabled {
   background-color: var(--blanco);
 }
+
 /* --- Carrito de compras --- */
 .carrito {
   display: grid;
@@ -1379,4 +1399,11 @@ button.navegacion__enlace {
   .panel-admin {
     grid-template-columns: 1fr;
   }
+}
+
+/* Panel de Control: aquí los controles sí deben ajustarse al ancho de la tarjeta */
+.panel-admin .campo .form-control,
+.panel-admin .campo .form-select {
+  width: 100%;
+  min-width: 0;
 }
