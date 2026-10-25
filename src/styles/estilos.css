@@ -1407,3 +1407,136 @@ button.navegacion__enlace {
   width: 100%;
   min-width: 0;
 }
+/* ADAPTACIÓN A MÓVILES (no afecta pantallas de escritorio) */
+
+/* Rejillas de tarjetas: 3 columnas -> 2 */
+@media (max-width: 900px) {
+  .rejilla-productos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Panel de Control: la tabla no debe ensanchar la columna única */
+  .panel-admin {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  /* Navbar: logo y menú apilados, enlaces centrados en varias líneas */
+  .encabezado__barra {
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    padding-block: 12px;
+  }
+
+  .navegacion__lista {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .navegacion__enlace {
+    padding: 0.45rem 0.75rem;
+  }
+
+  /* Hero del Index: texto y luego imagen */
+  .hero {
+    padding-block: 48px;
+  }
+
+  .hero__rejilla {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .hero__datos {
+    gap: 20px 28px;
+  }
+
+  /* Index: beneficios y bloque de video en una columna */
+  .rejilla-beneficios,
+  .video-bloque {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Detalle de producto: galería e información en una columna */
+  .detalle {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .caja-compra {
+    width: 100%;
+  }
+
+  /* Registro y Login: una columna y filas de dos campos apiladas */
+  .cuenta-rejilla {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .fila-campos {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Footer: columnas apiladas */
+  .pie__rejilla {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+}
+
+/* Rejillas de tarjetas: 2 columnas -> 1 */
+@media (max-width: 600px) {
+  .rejilla-productos {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 375px) {
+  .contenedor {
+    padding-inline: 16px;
+  }
+
+  .logo__texto {
+    font-size: 1.3rem;
+  }
+
+  .navegacion__enlace,
+  button.navegacion__enlace {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .hero__datos {
+    gap: 16px 20px;
+  }
+
+  .dato__numero {
+    font-size: 1.5rem;
+  }
+
+  .panel-formulario {
+    padding: 24px 18px;
+  }
+
+  .caja-compra {
+    padding: 18px;
+  }
+
+  /* Carrito: filas más compactas y controles que envuelven */
+  .fila-carrito {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .selector-cantidad,
+  .fila-carrito__cierre {
+    flex-wrap: wrap;
+  }
+
+  .pie__legal {
+    flex-direction: column;
+  }
+}
