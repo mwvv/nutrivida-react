@@ -105,6 +105,3 @@ El detalle de los escenarios está en [`plan_de_pruebas.md`](./plan_de_pruebas.m
 npm test -- --run
 ```
 
-## Autoría
-
-Proyecto desarrollado por el equipo para la evaluación indicada. El diseño y los textos se mantienen fieles a la primera entrega (sitio en HTML, CSS y JavaScript).
