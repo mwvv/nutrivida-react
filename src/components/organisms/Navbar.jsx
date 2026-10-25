@@ -1,6 +1,6 @@
 import { Link, NavLink } from 'react-router-dom'
 
-function Navbar({ itemsMenu }) {
+function Navbar({ itemsMenu, sesion, onCerrarSesion }) {
     return (
         <header className="encabezado">
             <div className="contenedor encabezado__barra">
@@ -25,6 +25,17 @@ function Navbar({ itemsMenu }) {
                                 </NavLink>
                             </li>
                         ))}
+                        {sesion && (
+                            <li>
+                                <button
+                                    type="button"
+                                    className="navegacion__enlace navegacion__enlace--destacado"
+                                    onClick={onCerrarSesion}
+                                >
+                                    Cerrar sesión
+                                </button>
+                            </li>
+                        )}
                     </ul>
                 </nav>
             </div>

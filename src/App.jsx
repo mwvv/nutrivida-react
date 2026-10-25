@@ -1,13 +1,14 @@
 import { useState } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useNavigate } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles/estilos.css'
 import Navbar from './components/organisms/Navbar'
-import { itemsMenu } from './data/itemsMenu'
+import { itemsMenu, itemsMenuSesion } from './data/itemsMenu'
 import Footer from './components/organisms/Footer'
 import Index from './pages/Index'
 import Productos from './pages/Productos'
 import Producto from './pages/Producto'
+import Login from './pages/Login'
 import { productos as productosIniciales } from './data/productos'
 import Scrollpaginas from './utils/Scrollpaginas'
 
@@ -15,6 +16,18 @@ import Scrollpaginas from './utils/Scrollpaginas'
 function App() {
   const [productos] = useState(productosIniciales)
   const [carrito, setCarrito] = useState([])
+  const [sesion, setSesion] = useState(() => JSON.parse(localStorage.getItem('sesion')))
+  const navigate = useNavigate()
+
+  const iniciarSesion = (datos) => {
+    setSesion(datos)
+    navigate('/')
+  }
+
+  const cerrarSesion = () => {
+    localStorage.removeItem('sesion')
+    setSesion(null)
+  }
 
   const agregarAlCarrito = (id, cantidad) => {
     setCarrito((actual) => {
@@ -28,7 +41,7 @@ function App() {
 
   return (
     <>
-      <Navbar itemsMenu={itemsMenu} />
+      <Navbar itemsMenu={sesion ? itemsMenuSesion : itemsMenu} sesion={sesion} onCerrarSesion={cerrarSesion} />
       <Routes>
         <Route path="/" element={<Index productos={productos} />} />
         <Route path="/productos" element={<Productos productos={productos} />} />
@@ -36,6 +49,7 @@ function App() {
           path="/producto"
           element={<Producto productos={productos} carrito={carrito} agregarAlCarrito={agregarAlCarrito} />}
         />
+        <Route path="/login" element={<Login onLogin={iniciarSesion} />} />
       </Routes>
       <Footer />
       <Scrollpaginas />

@@ -1111,3 +1111,32 @@ textarea:focus-visible {
 .filtro-insignia[aria-pressed="true"] .insignia {
   box-shadow: 0 0 0 2px currentColor;
 }
+
+/* --- Ajustes para componentes de React Bootstrap en formularios --- */
+.campo .form-label {
+  margin-bottom: 0;
+}
+
+.campo .form-control {
+  line-height: inherit;
+}
+
+.campo .form-control:focus {
+  color: var(--negro-texto);
+  border-color: var(--verde-600);
+  box-shadow: 0 0 0 3px var(--verde-100);
+}
+
+.campo .form-control.campo--error {
+  border-color: var(--rojo-error);
+  background-color: #fdf4f3;
+}
+
+/* Botón "Cerrar sesión" del menú con el mismo aspecto que los enlaces */
+button.navegacion__enlace {
+  background: none;
+  font: inherit;
+  font-weight: 600;
+  line-height: inherit;
+  cursor: pointer;
+}
