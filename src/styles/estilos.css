@@ -1096,3 +1096,18 @@ textarea:focus-visible {
   background-image: linear-gradient(45deg, transparent 45%, var(--verde-800) 45%, var(--verde-800) 58%, transparent 58%);
 }
 
+
+/* --- Filtro por insignias del catalogo --- */
+.filtro-insignia {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  line-height: inherit;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.filtro-insignia[aria-pressed="true"] .insignia {
+  box-shadow: 0 0 0 2px currentColor;
+}

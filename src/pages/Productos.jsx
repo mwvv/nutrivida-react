@@ -4,11 +4,16 @@ import BarraCatalogo from '../components/organisms/BarraCatalogo'
 import GaleriaProductos from '../components/organisms/GaleriaProductos'
 import LlamadoAccion from '../components/organisms/LlamadoAccion'
 
-const opcionesFiltro = ['Todos', 'Producto', 'Servicio']
+const opcionesFiltro = [
+    { tipo: 'Producto', descripcion: 'llega a tu domicilio' },
+    { tipo: 'Servicio', descripcion: 'se agenda o se descarga' },
+]
 
 function Productos({ productos }) {
     const [filtro, setFiltro] = useState('Todos')
     const filtrados = filtro === 'Todos' ? productos : productos.filter((producto) => producto.tipo === filtro)
+
+    const cambiarFiltro = (tipo) => setFiltro((actual) => (actual === tipo ? 'Todos' : tipo))
 
     return (
         <main id="contenido">
@@ -24,7 +29,7 @@ function Productos({ productos }) {
                         total={filtrados.length}
                         opciones={opcionesFiltro}
                         seleccionado={filtro}
-                        onCambiar={setFiltro}
+                        onCambiar={cambiarFiltro}
                     />
                     <GaleriaProductos productos={filtrados} />
                 </div>
