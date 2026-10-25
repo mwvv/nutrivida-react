@@ -1140,3 +1140,27 @@ button.navegacion__enlace {
   line-height: inherit;
   cursor: pointer;
 }
+
+/* Área de texto del registro con el mismo aspecto que los inputs */
+.campo textarea {
+  font-family: var(--fuente-texto);
+  font-size: 1rem;
+  color: var(--negro-texto);
+  background-color: var(--blanco);
+  padding: 0.7rem 0.9rem;
+  min-height: 46px;
+  border: 1px solid var(--gris-borde);
+  border-radius: var(--radio-chico);
+  transition: border-color var(--transicion), box-shadow var(--transicion);
+}
+
+.campo textarea:focus {
+  border-color: var(--verde-600);
+  box-shadow: 0 0 0 3px var(--verde-100);
+  outline: none;
+}
+
+.campo textarea.campo--error {
+  border-color: var(--rojo-error);
+  background-color: #fdf4f3;
+}

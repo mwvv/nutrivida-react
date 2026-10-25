@@ -1,0 +1,18 @@
+export const regiones = [
+    { nombre: 'Arica y Parinacota', comunas: ['Arica', 'Camarones', 'Putre', 'General Lagos'] },
+    { nombre: 'Tarapacá', comunas: ['Iquique', 'Alto Hospicio', 'Pozo Almonte', 'Pica', 'Huara'] },
+    { nombre: 'Antofagasta', comunas: ['Antofagasta', 'Calama', 'Tocopilla', 'Mejillones', 'Taltal', 'San Pedro de Atacama'] },
+    { nombre: 'Atacama', comunas: ['Copiapó', 'Vallenar', 'Caldera', 'Chañaral', 'Huasco', 'Diego de Almagro'] },
+    { nombre: 'Coquimbo', comunas: ['La Serena', 'Coquimbo', 'Ovalle', 'Illapel', 'Vicuña', 'Los Vilos', 'Salamanca'] },
+    { nombre: 'Valparaíso', comunas: ['Valparaíso', 'Viña del Mar', 'Quilpué', 'Villa Alemana', 'San Antonio', 'Quillota', 'La Calera', 'Los Andes', 'San Felipe', 'Concón'] },
+    { nombre: 'Metropolitana de Santiago', comunas: ['Santiago', 'Providencia', 'Las Condes', 'Ñuñoa', 'La Florida', 'Maipú', 'Puente Alto', 'San Miguel', 'Recoleta', 'Independencia', 'La Reina', 'Vitacura', 'Peñalolén', 'Macul', 'Quilicura', 'Colina', 'Melipilla', 'Talagante', 'Buin', 'San Bernardo'] },
+    { nombre: "Libertador General Bernardo O'Higgins", comunas: ['Rancagua', 'San Fernando', 'Machalí', 'Rengo', 'Santa Cruz', 'Pichilemu', 'Graneros'] },
+    { nombre: 'Maule', comunas: ['Talca', 'Curicó', 'Linares', 'Constitución', 'Cauquenes', 'Molina', 'San Javier'] },
+    { nombre: 'Ñuble', comunas: ['Chillán', 'Chillán Viejo', 'San Carlos', 'Bulnes', 'Quirihue', 'Yungay'] },
+    { nombre: 'Biobío', comunas: ['Concepción', 'Talcahuano', 'Los Ángeles', 'Chiguayante', 'San Pedro de la Paz', 'Coronel', 'Lota', 'Hualpén'] },
+    { nombre: 'La Araucanía', comunas: ['Temuco', 'Padre Las Casas', 'Villarrica', 'Pucón', 'Angol', 'Victoria', 'Nueva Imperial'] },
+    { nombre: 'Los Ríos', comunas: ['Valdivia', 'La Unión', 'Río Bueno', 'Panguipulli', 'Paillaco', 'Lanco'] },
+    { nombre: 'Los Lagos', comunas: ['Puerto Montt', 'Osorno', 'Castro', 'Ancud', 'Puerto Varas', 'Calbuco', 'Frutillar'] },
+    { nombre: 'Aysén del General Carlos Ibáñez del Campo', comunas: ['Coyhaique', 'Puerto Aysén', 'Chile Chico', 'Cochrane'] },
+    { nombre: 'Magallanes y de la Antártica Chilena', comunas: ['Punta Arenas', 'Puerto Natales', 'Porvenir', 'Cabo de Hornos'] },
+]

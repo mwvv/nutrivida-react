@@ -9,6 +9,7 @@ import Index from './pages/Index'
 import Productos from './pages/Productos'
 import Producto from './pages/Producto'
 import Login from './pages/Login'
+import Registro from './pages/Registro'
 import { productos as productosIniciales } from './data/productos'
 import Scrollpaginas from './utils/Scrollpaginas'
 
@@ -50,6 +51,7 @@ function App() {
           element={<Producto productos={productos} carrito={carrito} agregarAlCarrito={agregarAlCarrito} />}
         />
         <Route path="/login" element={<Login onLogin={iniciarSesion} />} />
+        <Route path="/registro" element={<Registro />} />
       </Routes>
       <Footer />
       <Scrollpaginas />
