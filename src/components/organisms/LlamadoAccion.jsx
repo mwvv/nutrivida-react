@@ -1,18 +1,16 @@
 import Boton from '../atoms/Boton'
 
-function LlamadoAccion() {
+function LlamadoAccion({ titulo, texto, botones, variante }) {
     return (
-        <section className="seccion">
+        <section className={variante ? `seccion seccion--${variante}` : 'seccion'}>
             <div className="contenedor">
                 <div className="llamado">
-                    <h2>¿Primera vez por acá?</h2>
-                    <p>
-                        Crea tu cuenta y te enviamos una guía de porciones descargable, además de
-                        los precios preferentes para estudiantes y adultos mayores.
-                    </p>
+                    <h2>{titulo}</h2>
+                    <p>{texto}</p>
                     <div className="grupo-botones">
-                        <Boton texto="Crear cuenta gratis" variante="claro" to="/registro" />
-                        <Boton texto="Ya tengo cuenta" variante="borde-claro" to="/login" />
+                        {botones.map((boton) => (
+                            <Boton key={boton.texto} texto={boton.texto} variante={boton.variante} to={boton.to} />
+                        ))}
                     </div>
                 </div>
             </div>

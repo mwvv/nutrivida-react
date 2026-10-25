@@ -5,19 +5,26 @@ import ProductosDestacados from '../components/organisms/ProductosDestacados'
 import LlamadoAccion from '../components/organisms/LlamadoAccion'
 import { datosHero } from '../data/datosHero'
 import { beneficios } from '../data/beneficios'
-import { productos } from '../data/productos'
 
 const idsDestacados = ['proteina-vegetal', 'consulta-online', 'pack-snacks']
-const destacados = idsDestacados.map((id) => productos.find((producto) => producto.id === id))
 
-function Index() {
+function Index({ productos }) {
+    const destacados = idsDestacados.map((id) => productos.find((producto) => producto.id === id))
+
     return (
         <main id="contenido">
             <Hero datos={datosHero} />
             <Beneficios beneficios={beneficios} />
             <VideoBloque />
             <ProductosDestacados productos={destacados} />
-            <LlamadoAccion />
+            <LlamadoAccion
+                titulo="¿Primera vez por acá?"
+                texto="Crea tu cuenta y te enviamos una guía de porciones descargable, además de los precios preferentes para estudiantes y adultos mayores."
+                botones={[
+                    { texto: 'Crear cuenta gratis', variante: 'claro', to: '/registro' },
+                    { texto: 'Ya tengo cuenta', variante: 'borde-claro', to: '/login' },
+                ]}
+            />
         </main>
     )
 }
