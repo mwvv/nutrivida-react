@@ -1169,3 +1169,12 @@ button.navegacion__enlace {
 .campo .form-select {
   width: auto;
 }
+
+/* Selects de React Bootstrap: dejar espacio para la flecha y mantener el fondo blanco del original */
+.campo .form-select {
+  padding-right: 2.25rem;
+}
+
+.campo .form-select:disabled {
+  background-color: var(--blanco);
+}
