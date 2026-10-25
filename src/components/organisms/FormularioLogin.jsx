@@ -49,7 +49,16 @@ function FormularioLogin({ onLogin }) {
             return
         }
 
-        const sesion = { correo: usuario.correo, nombre: usuario.nombre }
+        // Se guardan todos los datos del usuario menos la contraseña.
+        const sesion = {
+            correo: usuario.correo,
+            nombre: usuario.nombre,
+            apellidos: usuario.apellidos,
+            region: usuario.region,
+            comuna: usuario.comuna,
+            objetivo: usuario.objetivo,
+            alimentacion: usuario.alimentacion,
+        }
         localStorage.setItem('sesion', JSON.stringify(sesion))
         onLogin(sesion)
     }

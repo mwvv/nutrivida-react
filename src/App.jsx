@@ -12,6 +12,9 @@ import Login from './pages/Login'
 import Registro from './pages/Registro'
 import Carrito from './pages/Carrito'
 import NoEncontrada from './pages/NoEncontrada'
+import Admin from './pages/Admin'
+import Perfil from './pages/Perfil'
+import RutaProtegida from './utils/RutaProtegida'
 import { productos as productosIniciales } from './data/productos'
 import Scrollpaginas from './utils/Scrollpaginas'
 import { normalizarCantidad } from './utils/cantidad'
@@ -19,7 +22,7 @@ import { CANTIDAD_MINIMA, CANTIDAD_MAXIMA, contarUnidades } from './utils/carrit
 
 
 function App() {
-  const [productos] = useState(productosIniciales)
+  const [productos, setProductos] = useState(productosIniciales)
   const [carrito, setCarrito] = useState([])
   const [sesion, setSesion] = useState(() => JSON.parse(localStorage.getItem('sesion')))
   const navigate = useNavigate()
@@ -59,6 +62,20 @@ function App() {
     setCarrito([])
   }
 
+  // CRUD en memoria: los cambios se pierden al recargar la página.
+  const agregarProducto = (producto) => {
+    setProductos((actuales) => [...actuales, producto])
+  }
+
+  const editarProducto = (producto) => {
+    setProductos((actuales) => actuales.map((item) => (item.id === producto.id ? producto : item)))
+  }
+
+  const eliminarProducto = (id) => {
+    setProductos((actuales) => actuales.filter((item) => item.id !== id))
+    quitarDelCarrito(id)
+  }
+
   return (
     <>
       <Navbar
@@ -89,7 +106,28 @@ function App() {
             />
           }
         />
-        <Route path="*" element={<NoEncontrada />} />
+        <Route
+          path="/admin"
+          element={
+            <RutaProtegida sesion={sesion}>
+              <Admin
+                productos={productos}
+                agregarProducto={agregarProducto}
+                editarProducto={editarProducto}
+                eliminarProducto={eliminarProducto}
+              />
+            </RutaProtegida>
+          }
+        />
+        <Route
+          path="/perfil"
+          element={
+            <RutaProtegida sesion={sesion}>
+              <Perfil sesion={sesion} onCerrarSesion={cerrarSesion} />
+            </RutaProtegida>
+          }
+        />
+        <Route path="*"element={<NoEncontrada />} />
       </Routes>
       <Footer />
       <Scrollpaginas />

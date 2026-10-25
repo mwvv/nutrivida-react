@@ -184,3 +184,71 @@ export function validarConfirmarContrasena(clave, repetida) {
 export function validarTerminos(marcado) {
     return marcado ? '' : 'Debes aceptar los términos para continuar.'
 }
+
+const TIPOS_PRODUCTO = ['Producto', 'Servicio']
+const SOLO_DIGITOS = /^\d+$/
+
+const LARGO_MINIMO_NOMBRE_PRODUCTO = 3
+const LARGO_MAXIMO_NOMBRE_PRODUCTO = 60
+const PRECIO_MINIMO = 1
+const PRECIO_MAXIMO = 9999999
+const LARGO_MAXIMO_UNIDAD = 30
+const LARGO_MINIMO_RESUMEN = 10
+const LARGO_MAXIMO_RESUMEN = 120
+
+export function validarNombreProducto(valor) {
+    const nombre = valor.trim()
+
+    if (nombre === '') {
+        return 'Escribe el nombre del producto.'
+    }
+    if (nombre.length < LARGO_MINIMO_NOMBRE_PRODUCTO || nombre.length > LARGO_MAXIMO_NOMBRE_PRODUCTO) {
+        return 'El nombre debe tener entre ' + LARGO_MINIMO_NOMBRE_PRODUCTO + ' y ' + LARGO_MAXIMO_NOMBRE_PRODUCTO + ' caracteres.'
+    }
+    return ''
+}
+
+export function validarTipoProducto(valor) {
+    return TIPOS_PRODUCTO.includes(valor) ? '' : 'Selecciona si es un producto o un servicio.'
+}
+
+// Solo dígitos: así se rechazan textos, decimales, signos y notación como "1e5".
+export function validarPrecioProducto(valor) {
+    const precio = String(valor).trim()
+
+    if (precio === '') {
+        return 'Escribe el precio.'
+    }
+    if (!SOLO_DIGITOS.test(precio)) {
+        return 'El precio debe ser un número entero, sin puntos, comas ni letras.'
+    }
+    const numero = parseInt(precio, 10)
+    if (numero < PRECIO_MINIMO || numero > PRECIO_MAXIMO) {
+        return 'El precio debe estar entre ' + PRECIO_MINIMO + ' y ' + PRECIO_MAXIMO.toLocaleString('es-CL') + '.'
+    }
+    return ''
+}
+
+export function validarUnidadProducto(valor) {
+    const unidad = valor.trim()
+
+    if (unidad === '') {
+        return 'Escribe la unidad de venta (por ejemplo: unidad, pack o sesión).'
+    }
+    if (unidad.length > LARGO_MAXIMO_UNIDAD) {
+        return 'La unidad no puede superar los ' + LARGO_MAXIMO_UNIDAD + ' caracteres.'
+    }
+    return ''
+}
+
+export function validarResumenProducto(valor) {
+    const resumen = valor.trim()
+
+    if (resumen === '') {
+        return 'Escribe un resumen del producto.'
+    }
+    if (resumen.length < LARGO_MINIMO_RESUMEN || resumen.length > LARGO_MAXIMO_RESUMEN) {
+        return 'El resumen debe tener entre ' + LARGO_MINIMO_RESUMEN + ' y ' + LARGO_MAXIMO_RESUMEN + ' caracteres.'
+    }
+    return ''
+}

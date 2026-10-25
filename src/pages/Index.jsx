@@ -9,7 +9,10 @@ import { beneficios } from '../data/beneficios'
 const idsDestacados = ['proteina-vegetal', 'consulta-online', 'pack-snacks']
 
 function Index({ productos }) {
-    const destacados = idsDestacados.map((id) => productos.find((producto) => producto.id === id))
+    // filter(Boolean) descarta los destacados que se hayan eliminado desde el panel.
+    const destacados = idsDestacados
+        .map((id) => productos.find((producto) => producto.id === id))
+        .filter(Boolean)
 
     return (
         <main id="contenido">

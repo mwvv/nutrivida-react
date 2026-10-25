@@ -1,4 +1,8 @@
 function FichaProducto({ ficha }) {
+    if (!ficha || ficha.length === 0) {
+        return null
+    }
+
     return (
         <table className="tabla-ficha">
             <tbody>
