@@ -2,7 +2,7 @@
 
 Tienda en línea de suplementos, snacks saludables y servicios de nutrición. Este repositorio es la **migración a React** del sitio NutriVida (HTML + CSS + JavaScript) desarrollado para la primera evaluación, manteniendo el diseño original.
 
-Proyecto académico de Duoc UC, asignatura DSY1104, segunda evaluación parcial (presentación + proyecto).
+Proyecto académico de Duoc UC.
 
 - **Repositorio:** https://github.com/mwvv/nutrivida-react
 
