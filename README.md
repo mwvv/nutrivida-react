@@ -5,8 +5,6 @@ Tienda en línea de suplementos, snacks saludables y servicios de nutrición. Es
 Proyecto académico de Duoc UC, asignatura DSY1104, segunda evaluación parcial (presentación + proyecto).
 
 - **Repositorio:** https://github.com/mwvv/nutrivida-react
-- **Planificación (Trello):** [completar enlace]
-- **Integrantes:** [completar nombres]
 
 ## Tecnologías
 
